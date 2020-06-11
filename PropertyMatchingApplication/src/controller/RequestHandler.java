@@ -33,7 +33,7 @@ public class RequestHandler {
 
             double match = distanceMatch + priceMatch + bathroomMatch + bathroomMatch;
 
-            if(distanceMatch<=0||priceMatch<=0||bedroomMatch<=0||bathroomMatch<=0||match<40)
+            if(distanceMatch <= 0 || priceMatch <= 0 || bedroomMatch <= 0 || bathroomMatch <= 0 || match < 40)
                 continue; //Not adding the property if there is no match
             MatchedProperty matchedProperty=new MatchedProperty();
             matchedProperty.setProperty(allProperties.get(index));
