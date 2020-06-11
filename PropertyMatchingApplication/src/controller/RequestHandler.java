@@ -35,10 +35,10 @@ public class RequestHandler {
 
             if(distanceMatch<=0||priceMatch<=0||bedroomMatch<=0||bathroomMatch<=0||match<40)
                 continue; //Not adding the property if there is no match
-            MatchedProperty property=new MatchedProperty();
-            property.setProperty(allProperties.get(index));
-            property.setMatchPercent(distanceMatch + priceMatch + bathroomMatch + bathroomMatch); //Setting match % of matched property
-            matchedProperties.add(property);
+            MatchedProperty matchedProperty=new MatchedProperty();
+            matchedProperty.setProperty(allProperties.get(index));
+            matchedProperty.setMatchPercent(match); //Setting match % of matched property
+            matchedProperties.add(matchedProperty);
         }
         //Sorting in decreasing order of match percent
         matchedProperties.sort(new CustomComparator());
