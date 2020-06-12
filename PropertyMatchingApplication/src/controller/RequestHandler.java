@@ -4,9 +4,9 @@ import model.*;
 import utilities.CustomComparator;
 
 import java.util.ArrayList;
+import static java.lang.StrictMath.*;
 
 import static utilities.MatchingUtility.*;
-import static utilities.RequestValidator.isRequestValid;
 
 public class RequestHandler {
     private ArrayList<Property> allProperties;
@@ -45,12 +45,20 @@ public class RequestHandler {
         return matchedProperties;
     }
 
+    private boolean isRequestValid(int id, double latitude, double longitude, long  min_budget, long  max_budget, int min_bedrooms,
+                                         int max_bedrooms, int min_bathrooms, int max_bathrooms) {
+        if(max(min_budget, max_budget) > 0 && max(min_bedrooms, max_bedrooms) > 0 && max(min_bathrooms, max_bathrooms) > 0)
+            return true;  // valid request
+        //More validation checks can be added here
+        return false;	// invalid request
+    }
+
     private void getAllProperties(){
         allProperties = new ArrayList<>();
         //
         //
         //
-        //Code to fetch all properties from database
+        //This method will interact with accessor to fetch all properties from database
         //
         //
         //
